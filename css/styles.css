@@ -101,6 +101,7 @@ a {
 }
 
 .navigation-link {
+  text-transform: uppercase;
   font-size: 12px;
   line-height: 1.25;
 }
@@ -114,6 +115,11 @@ a {
   padding-top: 145px;
   background-color: var(--dark-section-background-color);
   color: var(--font-dark-theme);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -156,28 +162,46 @@ a {
 }
 
 .hero-btn {
-  min-width: 200px;
-  min-height: 42px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  min-width: 198px;
+  min-height: 40px;
   padding: 12px 60px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.19;
   color: var(--font-dark-theme);
+  border: none;
   border-radius: 5px;
-  background-image: linear-gradient(90deg, #00c5eb, #b544fe);
-  border-width: 1px;
-  border-style: solid;
-  border-image: linear-gradient(to right, #00c5eb, #b544fe) 1;
+  background-color: transparent;
+  transition: background-image 1s linear;
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background-image: var(--dark-section-background-color);
-  border-image: linear-gradient(to right, #00c5eb, #b544fe) 1;
+  background-image: linear-gradient(
+    to right,
+    var(--dark-section-background-color),
+    var(--dark-section-background-color)
+  );
 }
 
-.hero-section {
-  position: relative;
+.hero-btn::before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #00c5eb, #b544fe);
+}
+
+.hero-btn:hover::before {
+  background-color: #000000;
 }
 
 .hero-pic-main {
