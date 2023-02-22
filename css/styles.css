@@ -304,7 +304,6 @@ a {
 
 .content-wrapper {
   width: 479px;
-  margin-right: 161px;
 }
 
 .watch-the-video-title {
@@ -318,6 +317,39 @@ a {
 .icons-wrapper {
   display: flex;
   gap: 20px;
+}
+
+.firm-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--body-background-color);
+}
+
+.firm-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #00c5eb, #b544fe);
+}
+
+.watch-the-video-phone {
+  position: relative;
+  margin-left: 161px;
+}
+
+.watch-the-video-phone > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.watch-the-video-phone-spray {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 1;
 }
 
 /* ========== WATCH THE VIDEO SECTION ========== */
@@ -355,6 +387,11 @@ a {
   border-radius: 15px;
 }
 
+.our-team-pic {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .card-content {
   padding-top: 20px;
   padding-bottom: 12px;
@@ -381,6 +418,7 @@ a {
 
 .customers {
   padding-top: 80px;
+  padding-bottom: 126px;
 }
 
 .customers-title {
@@ -395,10 +433,31 @@ a {
   justify-content: center;
 }
 
-.card-pic {
+.customers-pic {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.card-descript {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.customers-descript {
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 /* ========== CUSTOMERS SECTION ========== */
