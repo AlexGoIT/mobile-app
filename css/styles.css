@@ -71,6 +71,9 @@ a {
 .header {
   padding-top: 26px;
   background-color: var(--dark-section-background-color);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .header-background {
