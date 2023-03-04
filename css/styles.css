@@ -165,32 +165,39 @@ a {
 }
 
 .hero-btn {
-  display: inline-block;
+  display: block;
   position: relative;
-  z-index: 2;
-  min-width: 198px;
-  min-height: 40px;
+  /* z-index: 2; */
+  /* min-width: 198px;
+  min-height: 40px; */
   padding: 12px 60px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.19;
   color: var(--font-dark-theme);
-  border: none;
+  /* border: none; */
   border-radius: 5px;
-  background-color: transparent;
-  transition: background-image 1s linear;
+  /* background-color: transparent; */
+  /* transition: background-image 1s linear; */
+  overflow: hidden;
+  background-image: linear-gradient(90.03deg, #00c5eb -1.97%, #b544fe 89.43%);
 }
 
-.hero-btn:hover,
+.hero-btn > span {
+  position: relative;
+  z-index: 10;
+}
+
+/* .hero-btn:hover,
 .hero-btn:focus {
   background-image: linear-gradient(
     to right,
     var(--dark-section-background-color),
     var(--dark-section-background-color)
   );
-}
+} */
 
-.hero-btn::before {
+/* .hero-btn::before {
   position: absolute;
   z-index: -1;
   content: '';
@@ -201,11 +208,56 @@ a {
   border: none;
   border-radius: 5px;
   background-image: linear-gradient(90deg, #00c5eb, #b544fe);
+} */
+
+.hero-btn::before,
+.hero-btn::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.hero-btn:hover::before {
-  background-color: #000000;
+.hero-btn::before {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90.03deg, #00c5eb -1.97%, #b544fe 89.43%);
 }
+
+.hero-btn::after {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 5px;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.hero-btn:hover::after,
+.hero-btn:focus::after {
+  opacity: 1;
+}
+
+/* .hero-btn:hover::before {
+  background-color: #000000;
+} */
+
+/* ================= */
+/* 
+
+.hero-btn:hover,
+.hero-btn:focus {
+  border: 1px solid transparent;
+  background: var(--accent-bg);
+  box-shadow: inset 0px 0px 0px 100vw var(--main-bg);
+} 
+
+*/
+/* ================ */
 
 .hero-pic-main {
   position: absolute;
